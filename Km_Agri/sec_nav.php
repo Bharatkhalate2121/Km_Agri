@@ -8,7 +8,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+<style>
 
+    </style>
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -52,7 +54,7 @@ if ($_SESSION["des"]==0)
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
                 <a href="index.php" class="nav-item nav-link active">Home</a>
-                <a href="hire.php" class="nav-item nav-link">Connect to Expert</a>
+                <a href="adv_hire.php" class="nav-item nav-link">Connect to Expert</a>
                 <a href="view_query_farmer.php" class="nav-item nav-link">Queries</a>
                 <a href="#" class="nav-item nav-link">Product</a>
                 <div class="nav-item dropdown">

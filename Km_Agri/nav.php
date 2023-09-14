@@ -44,7 +44,7 @@ session_start();
 
 
 <!-- Topbar Start -->
-<div class="container-fluid ">
+<div class="container-fluid " style="background-color: #ffffff;>
         <div class="row gx-5 py-3 align-items-left">
             <div class="col-lg-2">
                 <div class="d-flex align-items-center justify-content-center">

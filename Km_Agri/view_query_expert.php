@@ -51,7 +51,7 @@ else{
                    if ($sol != null) {
                         echo '<li class="list-group-item d-flex justify-content-between align-items-center">
                                 <div><h5 class="mt-2">' . $farmer_name . '</h5></div>
-                                <button class="btn btn-danger" onclick="deleteEntry(' . $farmer_id . ')">Delete'.$farmer_id.'</button>
+                                <button class="btn btn-danger" onclick="deleteEntry('.$farmer_id.')">Delete'.$farmer_id.'</button>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#farmerModal' . $farmer_id . '">View Query</button>
                               </li>';
                     } else {
@@ -110,6 +110,7 @@ else{
 ?>
             <script>
             function deleteEntry(farmerId) {
+                farmerId:<?php $farmer_id; ?>
                 if (confirm("Are you sure you want to delete this entry?" + farmerId)) {
                     // Send an AJAX request to delete the entry from the database
                     $.ajax({

@@ -18,11 +18,48 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample Form</title>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Colorful Form</title>
+        <!-- Include Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Custom CSS for background color and animation -->
+        <style>
+        /* body {
+            background-color: #87CEEB; /* Sky-blue background color 
+        } */
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for card effect */
+        }
+        .btn-primary {
+            background-color: #ff6666; /* Button color */
+            border-color: #ff6666; /* Button border color */
+        }
+        .btn-primary:hover {
+            background-color: #ff3333; /* Button color on hover */
+            border-color: #ff3333; /* Button border color on hover */
+            animation: pulse 0.5s ease infinite; /* Simple pulse animation */
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        </style>
 </head>
 
 <body>
     <form method="post" enctype="multipart/form-data">
-        <label for="dropdown">Select an option:</label>
+        <label for="dropdown">Select Crop:</label>
         <select id="dropdown" name="dropdown">
             <?php
             require('conn.php');
