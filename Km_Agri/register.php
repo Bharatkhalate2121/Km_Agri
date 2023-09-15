@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -317,6 +320,7 @@ pwShowHide.forEach((eyeIcon) => {
   </body>
 </html>
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -366,8 +370,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Insert data into the database
         $sql = "INSERT INTO farmer_data (f_name, u_name, pass,mno) VALUES ('$name', '$username', '$password','$mno')";
+        $_SESSION["name"] =$name;
+        $_SESSION["des"]=0;
         //echo '<script>alert('.$mno.');</script>';
         if ($conn->query($sql) === TRUE) {
+            
             echo '<script>alert("Registration Done");</script>';
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

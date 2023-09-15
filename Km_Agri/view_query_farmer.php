@@ -151,20 +151,24 @@ button#submitRating:hover {
                                 </div>
                             </div>
                         </div>
+                        <form method="post" action="process_rating.php">
                         <div id="dialog" class="dialog">
-                        <div class="dialog-content">
-                            <span class="close" id="closeDialog">&times;</span>
-                            <h2>Rate this item</h2>
-                            <div class="rating">
-                                <input type="radio" name="rating" id="star5" value="5" /><label for="star5"></label>
-                                <input type="radio" name="rating" id="star4" value="4" /><label for="star4"></label>
-                                <input type="radio" name="rating" id="star3" value="3" /><label for="star3"></label>
-                                <input type="radio" name="rating" id="star2" value="2" /><label for="star2"></label>
-                                <input type="radio" name="rating" id="star1" value="1" /><label for="star1"></label>
+                            <div class="dialog-content">
+                                <span class="close" id="closeDialog">&times;</span>
+                                <h2>Rate this item</h2>
+                                <div class="rating">
+                                    <input type="radio" name="rating" id="star5" value="5" /><label for="star5"></label>
+                                    <input type="radio" name="rating" id="star4" value="4" /><label for="star4"></label>
+                                    <input type="radio" name="rating" id="star3" value="3" /><label for="star3"></label>
+                                    <input type="radio" name="rating" id="star2" value="2" /><label for="star2"></label>
+                                    <input type="radio" name="rating" id="star1" value="1" /><label for="star1"></label>
+                                </div>
+                                <input type="hidden" name="farmer_id" value="' . $farmer_id . '">
+                                <button type="submit" id="submitRating">Submit</button>
                             </div>
-                            <button id="submitRating">Submit</button>
                         </div>
-                    </div>';
+                    </form>
+                    ';
                         
                 }
             //}

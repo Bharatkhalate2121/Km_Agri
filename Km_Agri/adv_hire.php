@@ -169,10 +169,12 @@ else{
                         
                         
                         move_uploaded_file($tempfile, $folder);
-                        echo "Data inserted into the '$tbname' table successfully.<br>";
-                        echo "Selected Option: " . $selectedOption . "<br>";
-                        echo "Uploaded Image: " . $filename . "<br>";
-                        echo "Text Input: " . $textInput . "<br>";
+                        $a= "Data inserted into the '$tbname' table successfully.<br>";
+                        $b= "Selected Option: " . $selectedOption . "<br>";
+                        $c= "Uploaded Image: " . $filename . "<br>";
+                        $d= "Text Input: " . $textInput . "<br>";
+                        echo "<script>alert('Job assigned: $tbname selected option: $selectedOption');</script>";
+
                      } else {
                         echo "Error inserting data: " . mysqli_error($conn);
                     }
