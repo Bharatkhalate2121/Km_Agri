@@ -42,7 +42,7 @@ else{
                     $farmer_name = $row['farmer_name'];
                     $farmer_id = $row['id']; // Assuming you have a unique ID for each farmer
                     $img="./image/".$row['img'];
-                    $sol=$row['ans'];
+                    $sol=$row['que'];
                     // echo '<li class="list-group-item d-flex justify-content-between align-items-center">
                     // <div><h5 class="mt-2">' . $farmer_name . '</h5></div>
                     // <button class="btn btn-primary" data-toggle="modal" data-target="#farmerModal' . $farmer_id . '">View Query</button>
@@ -54,6 +54,7 @@ else{
                                 <button class="btn btn-danger" onclick="deleteEntry('.$farmer_id.')">Delete'.$farmer_id.'</button>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#farmerModal' . $farmer_id . '">View Query</button>
                               </li>';
+                              echo '<script>var farmerId2 = ' . json_encode($farmer_id) . ';</script>';
                     } else {
                         echo '<li class="list-group-item d-flex justify-content-between align-items-center">
                                 <div><h5 class="mt-2">' . $farmer_name . '</h5></div>
@@ -78,46 +79,30 @@ else{
                                     <p> ' . $row['disc'] . '.</p>
                                     
                                     
-                                    <form method="post">
-                                    <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="option" id="askQueryRadio" value="askQuery" checked>
-                                    <label class="form-check-label" for="askQueryRadio">
-                                    Ask a Query to Farmer
-                                    </label>
-                                    </div>
-                                    <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="option" id="submitSolutionRadio" value="submitSolution">
-                                    <label class="form-check-label" for="submitSolutionRadio">
-                                    Submit Solution
-                                    </label>
-                                    </div>
-                                    <div class="form-group">
-                                    <label for="query'.$farmer_id.'">Your Query or Solution:</label>
-                                    <textarea class="form-control" name="text" id="query'.$farmer_id.'" rows="3"></textarea>
-                                    </div>
+                                    <form method="post" action="msg_exp.php">
                                     <input type="hidden" name="farmer_id" value="' . $id . '">
-    <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-    </div>
-   
-    
-    
-    </div>
-    </div>
-    </div>';
-}}
-?>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                    
+                                    </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                    </div>
+                                    </div>';
+                                }}
+                                ?>
             <script>
-            function deleteEntry(farmerId) {
-                farmerId:<?php $farmer_id; ?>
-                if (confirm("Are you sure you want to delete this entry?" + farmerId)) {
+                function deleteEntry(farmerId) {
+                farmerId:farmerId
+                if (confirm("Are you sure you want to delete this entry?" + farmerId2)) {
                     // Send an AJAX request to delete the entry from the database
                     $.ajax({
                         type: "POST",
                         url: "delete_entry.php", // Replace with the actual URL to your delete script
                         data: {
-                            farmerId: farmerId
+                            farmerId: farmerId2
                         },
                         success: function(response) {
                             // Handle the response here if needed
@@ -136,47 +121,6 @@ else{
 
         </ul>
     </div>
-
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        require('conn.php'); // Include your database connection script
-        
-        // Get the data from the form
-        $farmerId = $_POST["farmer_id"];
-        $text = $_POST["text"];
-        if (isset($_POST["option"])) {
-            $option = $_POST["option"];
-            
-
-    if ($option === "askQuery") {
-        $updateQuery = "UPDATE `problems` SET `que` = '$text' WHERE `id` = '$farmerId'";
-        
-        // Use prepared statements to prevent SQL injection
-        if ($stmt = $conn->query($updateQuery)) {
-            echo $text."".$farmerId;
-            echo "query submitted successfully.";
-            
-        }  } elseif ($option === "submitSolution") {
-            $updateQuery = "UPDATE `problems` SET `ans` = '$text' WHERE `id` = '$farmerId'";
-            
-            // Use prepared statements to prevent SQL injection
-            if ($stmt = $conn->query($updateQuery)) {
-                echo $text."".$farmerId;
-                echo "Solution submitted successfully.";
-                
-            }  }
-            
-            // Display a success message based on the selected option
-            echo "Operation completed successfully.";
-} else {
-    echo "Please select an option."; // Handle the case where no option is selected.
-}
-}
-
-?>
-
-
-
     <!-- Include Bootstrap JS and jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

@@ -1,5 +1,6 @@
 <?php
 require('conn.php');
+echo "<script>alert('bharat')</script>";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = 1234; // Replace with the appropriate chat ID
     $msg = $_POST['message'];

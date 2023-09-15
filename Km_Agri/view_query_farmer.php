@@ -41,12 +41,23 @@ else{
                     $farmer_id = $row['id']; // Use the unique ID for each farmer's query
                     $img = "./image/".$row['img'];
                    // $solution = $row['ans']; // Load existing solution if any
-                    
+                   $sol=$row['que'];
+
+    
+                    if($sol){
                     echo '<li class="list-group-item d-flex justify-content-between align-items-center">
                             <div><h5 class="mt-2">' . $farmer_id . '</h5></div>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#farmerModal' . $farmer_id . '">View Query</button>
                         </li>';
-
+                    }
+                    else{
+                        echo '<li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><h5 class="mt-2">' . $farmer_id . '</h5></div>
+                            <button class="btn btn-danger" onclick="deleteEntry('.$farmer_id.')">Delete'.$farmer_id.'</button>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#farmerModal' . $farmer_id . '">View Query</button>
+                        </li>';
+                        echo '<script>const farmerId1 = ' . json_encode($farmer_id) . ';</script>';
+                    }
                     // Create a modal for each farmer
                     echo '<div class="modal fade" id="farmerModal' . $farmer_id . '" tabindex="-1" role="dialog" aria-labelledby="farmerModalLabel' . $farmer_id . '" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -65,10 +76,6 @@ else{
                                         
                                         <!-- Simple HTML form for submitting solutions -->
                                         <form method="post" action="get_solution.php">
-                                            <div class="form-group">
-                                                <label for="solution' . $farmer_id . '">Solution:</label>
-                                                <textarea class="form-control" name="solution" id="solution' . $farmer_id . '" rows="3" placeholder="solution will apear here"></textarea>
-                                            </div>
                                             <input type="hidden" name="farmer_id" value="' . $farmer_id . '">
                                             <button type="submit" class="btn btn-primary">Submit Solution</button>
                                         </form>
@@ -77,15 +84,45 @@ else{
                                 </div>
                             </div>
                         </div>';
+                        
                 }
             //}
             ?>
         </ul>
     </div>
 
+    <script>
+                function deleteEntry(farmerId) {
+                farmerId =farmerId;
+                if (confirm("Are you sure you want to delete this entry?" + farmerId1)) {
+                    // Send an AJAX request to delete the entry from the database
+                    $.ajax({
+                        type: "POST",
+                        url: "delete_entry_far.php", // Replace with the actual URL to your delete script
+                        data: {
+                            farmerId: farmerId1
+                        },
+                        success: function(response) {
+                            // Handle the response here if needed
+                            // You can also reload the page or remove the entry from the list
+                            location.reload(); // Reload the page to reflect the changes
+                            //confirm(response);
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle the error here
+                            console.error(error);
+                        }
+                    });
+                }
+            }
+            </script>
+
     <!-- Include Bootstrap JS and jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+
 </body>
 </html>
