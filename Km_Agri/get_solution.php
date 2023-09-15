@@ -9,7 +9,7 @@ else{
     exit();
     header("Location: index.php");
 }
-?>
+?>  
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require('conn.php'); // Include your database connection script
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //     // Error preparing the statement
     //     echo "Error preparing statement: " . $con->error;
     //}
-    echo '<script>var farmerId = ' . json_encode($farmerId) . ';</script>';
+    echo '<script>const farmerId = ' . json_encode($farmerId) . ';</script>';
 }
 ?>
 

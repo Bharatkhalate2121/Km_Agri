@@ -1,28 +1,26 @@
-
 <?php
 // Include your database connection script (e.g., conn.php)
 require('conn.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the farmerId from the POST data
-    $farmerId =( $_POST["farmerId"]);
+    $farmerId = $_POST["farmerId"];
     
-    // Perform the DELETE query to remove the entry with the specified farmerId
-    $updatequery = "UPDATE `problems` SET `que` = '1' WHERE `id` = '$farmerId'";
-
-    //$deleteQuery = "UPDATE `problems` WHERE `id` = '$farmerId'";
-  
-    if ($conn->query($updatequery)) {
-        // Successfully deleted the entry
-        echo "Entry deleted successfully.".$farmerId;
+    // Sanitize the input to prevent SQL injection
+    $farmerId = mysqli_real_escape_string($conn, $farmerId);
+    
+    // Perform the UPDATE query to mark the entry with the specified farmerId as "1"
+    $updateQuery = "UPDATE `problems` SET `que` = 1 WHERE `id` = '$farmerId'";
+    
+    if ($conn->query($updateQuery)) {
+        // Successfully updated the entry
+        echo "Entry updated successfully. ID: " . $farmerId;
     } else {
-        // Error occurred during deletion
-        echo "Error deleting the entry: " . $conn->error;
+        // Error occurred during the update
+        echo "Error updating the entry: " . $conn->error;
     }
 } else {
     // Handle the case where the request method is not POST
     echo "Invalid request method.";
 }
-
-
 ?>
