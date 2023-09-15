@@ -44,9 +44,9 @@
  if(isset($_SESSION["name"])){
 if ($_SESSION["des"]==0)
 {
-    echo '<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+    echo '<nav class="navbar navbar-expand-lg  navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5" style="background-color:#34AD54;">
         <a href="index.html" class="navbar-brand d-flex d-lg-none">
-            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
+            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Km</span>_Agri</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -76,7 +76,7 @@ else
 {
     echo '<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
     <a href="index.html" class="navbar-brand d-flex d-lg-none">
-        <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
+        <h1 class="m-0 display-4 " style="color:#FF9933"><span class="text-white">Km</span>_Agri</h1>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -107,7 +107,7 @@ else
  {
     echo '<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
         <a href="index.html" class="navbar-brand d-flex d-lg-none">
-            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
+            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Km</span>_Agri</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>

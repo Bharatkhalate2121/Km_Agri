@@ -88,14 +88,29 @@ else{
                             </select>
                         </div>
                         
-                        <label class="imgupl" for="image">
-                            <!-- You can place text or content inside the label if needed -->
-                        </label>
-                        
-                        <input type="file" class="custom-file-input" id="image" name="choosefile" accept="image/*">
+                        <label class="imgupl" for="image"></label>
+<input type="file" class="custom-file-input" id="image" name="choosefile" accept="image/*">
+
+<div id="selected-image-preview" class="mt-3 mb-3" style="display: none;"></div>
+
+<script>
+  const fileInput = document.getElementById('image');
+  const selectedImagePreview = document.getElementById('selected-image-preview');
+  fileInput.addEventListener('change', (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+
+      selectedImagePreview.textContent = `File Selected: ${selectedFile.name}`;
+      selectedImagePreview.style.display = 'block'; // Show the hidden div
+    } else {
+      selectedImagePreview.style.display = 'none';
+    }
+  });
+</script>
+
                         
                         <div class="form-group">
-                            <label for="text">Text Field</label>
+                            <label for="text">Enter Your Query :</label>
                             <input
                                 type="text"
                                 class="form-control"
