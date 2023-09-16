@@ -87,10 +87,12 @@ button#submitRating:hover {
     </style>
 </head>
 <body>
+    <br><br>
     <div class="container">
         <center>
-            <h1>Expert Profiles</h1>
+            <h1>Queries Uploaded By <?php echo $_SESSION["name"]; ?></h1>
         </center>
+        <br>
         <ul class="list-group" style="margin-top: 10px;">
             <?php
             require('conn.php');

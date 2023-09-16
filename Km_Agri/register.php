@@ -370,10 +370,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Insert data into the database
         $sql = "INSERT INTO farmer_data (f_name, u_name, pass,mno) VALUES ('$name', '$username', '$password','$mno')";
-        $_SESSION["name"] =$name;
-        $_SESSION["des"]=0;
+       
         //echo '<script>alert('.$mno.');</script>';
         if ($conn->query($sql) === TRUE) {
+          $_SESSION["name"] =$name;
+          $_SESSION["des"]=0;
             
             echo '<script>alert("Registration Done");</script>';
         } else {

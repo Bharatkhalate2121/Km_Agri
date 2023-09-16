@@ -64,6 +64,9 @@ echo '<script>var farmerId = ' . json_encode($farmerId) . ';</script>';
     <link rel="stylesheet" type="text/css" href="viewchatcss.css">
 </head>
 <body>
+    <br>
+    <br>
+    <br>
 <div class="chat-container">
     <div id="chat-messages">
         <!-- Chat messages will be displayed here -->

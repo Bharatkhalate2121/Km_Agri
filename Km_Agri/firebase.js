@@ -22,7 +22,9 @@ function phoneAuth() {
     });
 }
 function ct(){
+
     window.open("index.php");
+    location.reload();
 }
 function codeverify() {
     var code = document.getElementById('verificationCode').value;

@@ -16,7 +16,7 @@ require ('sec_nav.php');
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <p class="card-text">This is the content of the new page. You can add more HTML and PHP code here as needed.</p>
+                        <p class="card-text"> For Seeing the content of this page Please Do Login </p>
                         <!-- Add any additional content, PHP code, or functionality you need -->
                         <a href="login1.php" class="btn btn-primary">Login First</a>
                         <!-- Replace "index.php" with the actual URL of your main page -->

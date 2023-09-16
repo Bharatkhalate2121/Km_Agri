@@ -24,7 +24,7 @@ else{
 <body>
     <div class="container">
         <center>
-            <h1>Expert Profiles</h1>
+            <h1>Farmers Query</h1>
         </center>
         <ul class="list-group" style="margin-top: 10px;">
             <?php

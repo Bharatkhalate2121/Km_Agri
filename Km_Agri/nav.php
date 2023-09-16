@@ -6,7 +6,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>FarmFresh - Organic Farm Website Template</title>
+    <title>KM Agri</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -38,18 +38,18 @@ session_start();
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     
-    <title>Document</title>
+    <title>km agri</title>
 </head>
 <body>
 
 
 <!-- Topbar Start -->
-<div class="container-fluid " style="background-color: #ffffff;>
+<div class="container-fluid " style="background-color: #ffffff;">
         <div class="row gx-5 py-3 align-items-left">
             <div class="col-lg-2">
                 <div class="d-flex align-items-center justify-content-center">
                     <a href="index.html" class="navbar-brand ms-lg-5">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Km</span>_Agri</h1>
+                        <h1 class=" display-4 text-primary"><span class="text-secondary">Km</span>_Agri</h1>
                     </a>
                 </div>
             </div>
@@ -60,7 +60,7 @@ session_start();
                  if(isset($_SESSION["name"]))
                     {
                         echo '
-                        <h3 >'.$_SESSION['name'].'</h3> &nbsp;&nbsp;
+                        <h3 class="" >'.$_SESSION['name'].'</h3> &nbsp;&nbsp;
                         <form method="post">
                         <button type="submit" name="logout" id="logout" class="btn btn-primary" data-bs-toggle="modal"  >Log Out
 </button> </form>';

@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require('conn.php'); // Include your database connection script
     // Get the data from the form
     $farmerId = $_POST["farmer_id"];
-    $solutionText = $_POST["solution"];
+    //$solutionText = $_POST["solution"];
     //echo $solutionText."".$farmerId;
     // Update or insert the solution text into the database
     //$updateQuery = "UPDATE `problems` SET `ans` = '$solutionText' WHERE `id` = '$farmerId'";

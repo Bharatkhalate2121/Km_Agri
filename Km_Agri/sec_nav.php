@@ -58,16 +58,39 @@ if ($_SESSION["des"]==0)
                 <a href="view_query_farmer.php" class="nav-item nav-link">Queries</a>
                 <a href="product.php" class="nav-item nav-link">Product</a>
                 <a href="community.php" class="nav-item nav-link">community</a>
-                
-                <a href="contact.html" class="nav-item nav-link">About</a>
+                <a href="weather-web-app/index.html" class="nav-item nav-link">Weather</a>
+                <a href="http://127.0.0.1:5000/" class="nav-item nav-link">Get Solution By AI</a>
             </div>
         </div>
     </nav>';
 }
+else if ($_SESSION["des"]==2)
+{
+    echo '<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+    <a href="#" class="navbar-brand d-flex d-lg-none">
+        <h1 class="m-0 display-4 " style="color:#FF9933"><span class="text-white">Km</span>_Agri</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mx-auto py-0">
+            <a href="dash.php" class="nav-item nav-link active">Home</a>
+            <a href="add_crop.php" class="nav-item nav-link">Add crop</a>
+            <a href="add_expt.php" class="nav-item nav-link">Add expt</a>
+            <a href="community.php" class="nav-item nav-link">community</a>
+            <a href="weather-web-app/index.html" class="nav-item nav-link">Weather</a>
+                
+            <a href="#" class="nav-item nav-link">About</a>
+        </div>
+    </div>
+</nav>';
+
+}
 else
 {
     echo '<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
-    <a href="index.html" class="navbar-brand d-flex d-lg-none">
+    <a href="index.php" class="navbar-brand d-flex d-lg-none">
         <h1 class="m-0 display-4 " style="color:#FF9933"><span class="text-white">Km</span>_Agri</h1>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -76,12 +99,12 @@ else
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mx-auto py-0">
             <a href="index.php" class="nav-item nav-link active">Home</a>
-            <a href="view_query_expert.php" class="nav-item nav-link">View Queries</a>
-            <!--<a href="service.html" class="nav-item nav-link">Queries</a>
+            <a href="view_query_expert.php" class="nav-item nav-link">View Farmer Queries</a>
             <a href="product.php" class="nav-item nav-link">Product</a>
             <a href="community.php" class="nav-item nav-link">community</a>
+            <a href="weather-web-app/index.html" class="nav-item nav-link">Weather</a>
                 
-            <a href="#" class="nav-item nav-link">About</a>-->
+            <a href="#" class="nav-item nav-link">About</a>
         </div>
     </div>
 </nav>';
@@ -90,7 +113,7 @@ else
  else
  {
     echo '<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
-        <a href="index.html" class="navbar-brand d-flex d-lg-none">
+        <a href="index.php" class="navbar-brand d-flex d-lg-none">
             <h1 class="m-0 display-4 text-secondary"><span class="text-white">Km</span>_Agri</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -100,24 +123,16 @@ else
             <div class="navbar-nav mx-auto py-0">
                 <a href="index.php" class="nav-item nav-link active">Home</a>
                 <a href="#" class="nav-item nav-link" id="connectToExpert">Connect to Expert</a>
-                <a href="#" class="nav-item nav-link">Queries</a>
+                <a href="#" class="nav-item nav-link" id="connectToExpert">Queries</a>
                 <a href="product.php" class="nav-item nav-link">Product</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                        <a href="feature.html" class="dropdown-item">Features</a>
-                        <a href="team.html" class="dropdown-item">The Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    </div>
-                </div>
-                <a href="#" class="nav-item nav-link">About</a>
+                <a href="#" class="nav-item nav-link" id="connectToExpert">Get Solution By AI</a>
+                <a href="weather-web-app/index.html" class="nav-item nav-link">Weather</a>
             </div>
         </div>
     </nav>';
  }
 ?>
+
 <script>
 document.getElementById("connectToExpert").addEventListener("click", function() {
     // Redirect to the desired page (replace 'new_page.html' with the actual URL)

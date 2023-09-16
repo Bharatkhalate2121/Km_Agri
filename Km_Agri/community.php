@@ -18,25 +18,73 @@ else{
     <title>Expert Profiles</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container1 {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="file"],
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.hidden {
+    display: none;
+}
+.button{
+    float: left;
+}
+.btn-primary:hover {
+                background-color: #ff3333; /* Button color on hover */
+                border-color: #ff3333; /* Button border color on hover */
+                animation: pulse 0.5s ease infinite; /* Simple pulse animation */
+            }
+ </style>
+
 </head>
 <body>
-<form method="post" enctype="multipart/form-data">
-        <!-- <label for="dropdown">Select Crop:</label>
-        <select id="dropdown" name="dropdown">
-            <?php
-            //require('conn.php');
-            // $query = "SELECT * FROM `pik`;";
-            // $result = $conn->query($query);
+    <br>
+<button class='btn btn-primary' id="createPostButton">Create Post</button>
 
-            // while ($row = $result->fetch_assoc()) {
-            //     $optionName = $row['name'];
-            //     echo "<option value='$optionName'>$optionName</option>";
-            //}
-            ?>
-        </select> -->
-
-        <br>
-
+    <div id="postFormContainer" class="container1 hidden">
+        <form method="post" enctype="multipart/form-data">
         <label for="image">Upload an image:</label>
         <input type="file" id="image" name="choosefile" accept="image/*">
 
@@ -48,10 +96,21 @@ else{
         <br>
 
         <input type="submit" value="Submit" name="submit">
-    </form>
+        </form>
+    </div>
+    
+    <script>document.addEventListener("DOMContentLoaded", function () {
+    const createPostButton = document.getElementById("createPostButton");
+    const postFormContainer = document.getElementById("postFormContainer");
+
+    createPostButton.addEventListener("click", function () {
+        postFormContainer.classList.toggle("hidden");
+    });
+});
+</script>
     <div class="container">
         <center>
-            <h1>Expert Profiles</h1>
+            <h1>Community Query</h1>
         </center>
         <ul class="list-group" style="margin-top: 10px;">
             <?php
@@ -72,7 +131,7 @@ else{
                    // $solution = $row['ans']; // Load existing solution if any
                     
                     echo '<li class="list-group-item d-flex justify-content-between align-items-center">
-                            <div><h5 class="mt-2">' . $farmer_id . '</h5></div>
+                            <div><h5 class="mt-2">' . $row['disc'] . '</h5></div>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#farmerModal' . $farmer_id . '">View Query</button>
                         </li>';
 
@@ -95,11 +154,9 @@ else{
                                         <!-- Simple HTML form for submitting solutions -->
                                         <form method="post" action="get_solution_com.php">
                                             <div class="form-group">
-                                                <label for="solution' . $farmer_id . '">Solution:</label>
-                                                <textarea class="form-control" name="solution" id="solution' . $farmer_id . '" rows="3" placeholder="solution will apear here"></textarea>
-                                            </div>
+                                               </div>
                                             <input type="hidden" name="farmer_id" value="' . $farmer_id . '">
-                                            <button type="submit" class="btn btn-primary">Submit Solution</button>
+                                            <button type="submit" class="btn btn-primary">Viw replies</button>
                                         </form>
                                         
                                     </div>

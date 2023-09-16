@@ -1,0 +1,139 @@
+ <!-- <!DOCTYPE html>
+
+    <head>
+       
+        
+        
+        <head>
+        
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <meta name="author" content="">
+             <link rel="stylesheet" type="text/css" href="style.css"> 
+        
+            <title>chat</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>
+                    WebChat
+
+                </h1>
+            </div>
+            <div class="body">
+                <p class="message">Hello</p>
+                <p class="message user_message">Hii</p>
+            </div>
+            <div class="footer">
+                <form>
+                    <input type="text" name="">
+                    <button>SEND</button>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>  -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Chat</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WebChat</h1>
+        </div>
+        <div class="body">
+            <p class="message">Hello</p>
+            <p class="message user_message">Hii</p>
+        </div>
+        <div class="footer">
+            <form>
+                <input type="text" name="message">
+                <button>SEND</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Chat</title>
+    <style>
+        /* Add your CSS styles for the chat UI here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WebChat</h1>
+        </div>
+        <div class="body" id="chat-body">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="footer">
+            <form id="message-form">
+                <input type="text" id="message-input" name="message" placeholder="Type your message">
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for handling chat functionality goes here
+        const chatBody = document.getElementById('chat-body');
+        const messageForm = document.getElementById('message-form');
+        const messageInput = document.getElementById('message-input');
+
+        messageForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const userMessage = messageInput.value.trim();
+
+            if (userMessage !== '') {
+                // Create a new message element
+                const messageElement = document.createElement('p');
+                messageElement.className = 'message user_message';
+                messageElement.textContent = userMessage;
+
+                // Append the message to the chat body
+                chatBody.appendChild(messageElement);
+
+                // Clear the input field
+                messageInput.value = '';
+
+                // Simulate a response from the chatbot (you can replace this with actual logic)
+                setTimeout(function () {
+                    const botMessage = 'This is a bot response.';
+                    const botMessageElement = document.createElement('p');
+                    botMessageElement.className = 'message';
+                    botMessageElement.textContent = botMessage;
+                    chatBody.appendChild(botMessageElement);
+                }, 1000); // Simulated delay for the bot response
+            }
+        });
+    </script>
+</body>
+</html>
