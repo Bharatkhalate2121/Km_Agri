@@ -58,7 +58,7 @@ if ($_SESSION["des"]==0)
                 <a href="view_query_farmer.php" class="nav-item nav-link">Queries</a>
                 <a href="product.php" class="nav-item nav-link">Product</a>
                 <a href="community.php" class="nav-item nav-link">community</a>
-                <a href="weather-web-app/index.html" class="nav-item nav-link">Weather</a>
+                <a href="weather/index.html" class="nav-item nav-link">Weather</a>
                 <a href="http://127.0.0.1:5000/" class="nav-item nav-link">Get Solution By AI</a>
             </div>
         </div>
@@ -79,7 +79,7 @@ else if ($_SESSION["des"]==2)
             <a href="add_crop.php" class="nav-item nav-link">Add crop</a>
             <a href="add_expt.php" class="nav-item nav-link">Add expt</a>
             <a href="community.php" class="nav-item nav-link">community</a>
-            <a href="weather-web-app/index.html" class="nav-item nav-link">Weather</a>
+            <a href="weather/index.html" class="nav-item nav-link">Weather</a>
                 
             <a href="#" class="nav-item nav-link">About</a>
         </div>
@@ -102,7 +102,7 @@ else
             <a href="view_query_expert.php" class="nav-item nav-link">View Farmer Queries</a>
             <a href="product.php" class="nav-item nav-link">Product</a>
             <a href="community.php" class="nav-item nav-link">community</a>
-            <a href="weather-web-app/index.html" class="nav-item nav-link">Weather</a>
+            <a href="weather/index.html" class="nav-item nav-link">Weather</a>
                 
             <a href="#" class="nav-item nav-link">About</a>
         </div>
@@ -126,7 +126,7 @@ else
                 <a href="#" class="nav-item nav-link" id="connectToExpert">Queries</a>
                 <a href="product.php" class="nav-item nav-link">Product</a>
                 <a href="#" class="nav-item nav-link" id="connectToExpert">Get Solution By AI</a>
-                <a href="weather-web-app/index.html" class="nav-item nav-link">Weather</a>
+                <a href="weather/index.html" class="nav-item nav-link">Weather</a>
             </div>
         </div>
     </nav>';
