@@ -10,8 +10,8 @@ if ($chat) {
         if ($row['user']) {
             echo '<div class="message contact-message">' . $row['user'] . '</div>';
         }
-        if ($row['expt']) {
-            echo '<div class="message user-message">' . $row['expt'] . '</div>';
+        if ($row['msg']) {
+            echo '<div class="message user-message">' . $row['msg'] . '</div>';
         }
     }
 }
